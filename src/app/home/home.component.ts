@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(public auth: AuthService) { }
 
   public ngOnInit() {
-    console.log('here');
+
   }
 
 }

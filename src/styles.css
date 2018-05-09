@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+#body-id {
 	background-color: #383A3F;
 	color: #89FFF1;
 	font-family:  'Josefin Sans', sans-serif;
