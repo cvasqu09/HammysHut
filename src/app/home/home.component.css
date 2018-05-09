@@ -4,17 +4,14 @@ img {
 	border-radius: 50%;
 }
 
+h2 {
+	font-family: 'Luckiest Guy';
+}
+
 .row {
 	height: 7rem;
 }
 
 .header-col {
-	height: 100%;
-	display: table
+	padding: 3%;
 }
-
-.header-center {
-	display: table-cell;
-	vertical-align: middle;
-}
-
