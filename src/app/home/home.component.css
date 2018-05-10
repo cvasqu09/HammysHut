@@ -2,6 +2,7 @@ img {
 	max-height: 100%;
 	max-width: 100%;
 	border-radius: 50%;
+	display: block;
 }
 
 h2 {
@@ -11,8 +12,18 @@ h2 {
 .header-row {
 	height: 7rem;
 	margin: 1rem;
+	display: table-row;
+}
+
+.header-text {
+	text-align: center;
+	padding: 5%;
 }
 
 .header-col {
-	padding: 3%;
+
+}
+
+.image-col {
+	position: relative;
 }
