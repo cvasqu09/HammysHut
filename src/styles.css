@@ -1,5 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+#body-id {
 	background-color: #383A3F;
-	color: #4ECCA3;
+	color: #89FFF1;
+	font-family:  'Josefin Sans', sans-serif;
+}
+
+@font-face {
+	font-family: Junction;
+	src: url('./assets/fonts/junction-master/Junction-regular.otf');
+}
+
+@font-face {
+	font-family: League;
+	src: url('./assets/fonts/league-gothic-master/LeagueGothic-Regular.otf');
+}
+
+.cyan-btn {
+	background-color: #00e6cb;
+}
+
+.cyan-btn:hover {
+	background-color: #89FFF1;
 }

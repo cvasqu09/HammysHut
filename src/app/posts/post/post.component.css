@@ -1,0 +1,30 @@
+.text {
+	color: #fdbdf8;
+}
+
+.icons {
+	text-align: right;
+}
+
+.fa-edit {
+	margin-right: .5rem;
+}
+
+.fa-trash-alt {
+	color: #f44242;
+}
+
+.save-btn {
+	float: right;
+}
+
+.readonly {
+	background-color: #383A3F;
+	color: #fdbdf8;
+	border: none;
+}
+
+.container {
+ 	border-radius: 1rem;
+ 	padding: .8rem;
+}

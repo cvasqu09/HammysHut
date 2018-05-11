@@ -1,0 +1,32 @@
+<div class="container">
+	<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+		<div class="row">
+			<div class="col-6">
+				<small class="text">May 9th, 2018</small>
+			</div>
+			<div class="col-4 offset-2 icons">
+				<i class="far fa-edit" (click)="onEdit()"></i>
+				<i class="fas fa-trash-alt"></i>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 form-group">
+				<label for="message" class="text">Message</label>
+				<input 
+				type="textarea" 
+				id="message" 
+				class="form-control" 
+				formControlName="message" 
+				[readonly]="!editMode"
+				[class.readonly]="!editMode">
+			</div>
+			<div class="col-12">
+				<button type="submit" class="btn btn-primary save-btn" [hidden]="!editMode">Save</button>
+			</div>
+		</div>
+	</form>
+</div>
+<hr>
+
+
+
