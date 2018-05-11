@@ -8,14 +8,14 @@
 
 <hr>
 
-<div class="container">
+<div class="container" [hidden]="!authService.isAuthenticated()">
 	<div class="row">
 		<div class="col-12">
 			<textarea 
 			class="col-12"
 			name="new-log"
 			rows=3
-			[hidden]="!this.authService.isAuthenticated()"></textarea>
+			></textarea>
 		</div>
 		
 

@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { filter } from 'rxjs/operators';
+
 import * as auth0 from 'auth0-js';
 
 @Injectable()
 export class AuthService {
 
-  auth0 = new auth0.WebAuth({
+  public auth0 = new auth0.WebAuth({
     clientID: 'F-RJjA2UlbKTjAZ8DJuWm-m3aXISrd-x',
     domain: 'chrisv.auth0.com',
     responseType: 'token id_token',
     audience: 'https://chrisv.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200/home',
-    scope: 'openid'
+    scope: 'openid',
   });
 
   constructor(public router: Router) {}

@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DebugElement } from '@angular/core';
-import { PostComponent } from './post.component';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser'
+import { By } from '@angular/platform-browser';
+import { PostComponent } from './post.component';
 
 describe('PostComponent', () => {
   let postComponent: PostComponent;
@@ -13,20 +13,20 @@ describe('PostComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [PostComponent],
-      imports: [ReactiveFormsModule]
+      imports: [ReactiveFormsModule],
     });
-  })
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PostComponent);
     postComponent = fixture.debugElement.componentInstance;
-  })
+  });
 
   it('should make the textarea is editable after clicking the edit icon', () => {
-    var editButton = fixture.debugElement.nativeElement.querySelector('.fa-edit');
+    let editButton = fixture.debugElement.nativeElement.querySelector('.fa-edit');
     expect(postComponent.editMode).toBeFalsy();
     editButton.click();
     fixture.detectChanges();
     expect(postComponent.editMode).toBeTruthy();
-  })
+  });
 });
