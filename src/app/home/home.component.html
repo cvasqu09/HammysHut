@@ -8,7 +8,7 @@
 
 <hr>
 
-<div class="container" [hidden]="!authService.isAuthenticated()">
+<div class="container" id="new-log-container" *ngIf="authService.isAuthenticated()">
 	<div class="row">
 		<div class="col-12">
 			<textarea 
@@ -25,9 +25,9 @@
 			<button type="button" class="btn cyan-btn">Log a Lie</button>
 		</div>
 	</div>
+	<hr>
 </div>
 
-<hr>
 
 <div class="container">
 	<h3 id="log-header">The log so far...</h3>
