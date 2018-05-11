@@ -1,3 +1,35 @@
 <div class="container">
+	<div class="container">
+		<div class="row">
+			<h3>Hammy lies a lot. What better way to show the world what a great friend he is by logging his lies?</h3>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<textarea 
+			class="col-12"
+			name="new-log"
+			rows=3
+			[hidden]="!this.authService.isAuthenticated()"></textarea>
+		</div>
+		
+
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<button type="button" class="btn cyan-btn">Log a Lie</button>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="container">
+	<h3 id="log-header">The log so far...</h3>
 	<app-post></app-post>
 </div>

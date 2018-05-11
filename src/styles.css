@@ -14,3 +14,11 @@
 	font-family: League;
 	src: url('./assets/fonts/league-gothic-master/LeagueGothic-Regular.otf');
 }
+
+.cyan-btn {
+	background-color: #00e6cb;
+}
+
+.cyan-btn:hover {
+	background-color: #89FFF1;
+}
