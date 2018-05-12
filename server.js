@@ -6,6 +6,8 @@ const path = require('path');
 const http = require('http');
 const app = express();
 
+const postRoutes = require('./server/routes/post');
+
 // Ave atque vale
 app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
@@ -35,10 +37,11 @@ app.use(function (req, res, next) {
 });
 
 // API locations
-
 app.all('*', function (req, res) {
   res.redirect('/'); // Redirect to main screen if invalid path given
 });
+
+app.use('/post', postRoutes);
 
 // Set Port
 const port = process.env.PORT || '3000';
