@@ -9,9 +9,8 @@
     	"no-trailing-whitespace": true,
     	"quotemark": [true, "single"],
     	"semicolon": [true, "always"],
-    	"whitespace": [true, "check-separator", "check-decl"]
-
-
+      "whitespace": [true, "check-separator", "check-decl"],
+      "object-literal-sort-keys": false
     },
     "rulesDirectory": []
 }

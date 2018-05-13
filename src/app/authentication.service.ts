@@ -13,7 +13,7 @@ export class AuthService {
     domain: 'chrisv.auth0.com',
     responseType: 'token id_token',
     audience: 'https://chrisv.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/home',
+    redirectUri: 'http://localhost:4200/login',
     scope: 'openid',
   });
 
@@ -31,17 +31,8 @@ export class AuthService {
         this.router.navigate(['/home']);
       } else if (err) {
         this.router.navigate(['/home']);
-        console.log(err);
       }
     });
-  }
-
-  private setSession(authResult): void {
-    // Set the time that the Access Token will expire at
-    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
-    localStorage.setItem('access_token', authResult.accessToken);
-    localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('expires_at', expiresAt);
   }
 
   public logout(): void {
@@ -58,6 +49,32 @@ export class AuthService {
     // Access Token's expiry time
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
+  }
+
+  private setUserProfile(userResult): void {
+    const accessToken = localStorage.getItem('access_token');
+
+    const self = this;
+
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if(profile) {
+        localStorage.setItem('user_id', profile.sub);
+        window.location.reload();
+      }
+      if(err) {
+        console.log('Problem retrieving profile...\n' + err);
+      }
+    });
+  }
+
+  private setSession(authResult): void {
+    // Set the time that the Access Token will expire at
+    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    localStorage.setItem('access_token', authResult.accessToken);
+    localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('expires_at', expiresAt);
+    this.setUserProfile(authResult.idTokenPayload);
+
   }
 
 }

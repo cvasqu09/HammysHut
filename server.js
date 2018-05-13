@@ -5,14 +5,16 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const http = require('http');
 const app = express();
+require('dotenv').config();
+
+const postRoutes = require('./server/routes/post');
 
 // Ave atque vale
 app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
 const mongoose = require('mongoose');
-
-// const connectionString = `mongodb://${process.env.MONGOUSER}:${process.env.MONGOPASS}@${process.env.MONGO_ENDPOINT}`;
-// mongoose.connect(connectionString);
+const connectionString = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@${process.env.MONGO_CONNECTION}`;
+mongoose.connect(connectionString);
 // API file for interacting with MongoDB
 
 
@@ -34,8 +36,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-// API locations
+app.use('/api/post', postRoutes);
 
+// API locations
 app.all('*', function (req, res) {
   res.redirect('/'); // Redirect to main screen if invalid path given
 });

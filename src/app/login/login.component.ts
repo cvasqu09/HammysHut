@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../authentication.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +10,13 @@ import { AuthService } from '../authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private userService: UserService, private authService: AuthService) { }
 
   public ngOnInit() {
+    this.authService.handleAuthentication();
+    // this.userService.getUsers().subscribe((user) => {
+    //   const currentUser = localStorage.getItem('user_id');
+    // });
   }
 
 }
