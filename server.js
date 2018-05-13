@@ -41,7 +41,7 @@ app.all('*', function (req, res) {
   res.redirect('/'); // Redirect to main screen if invalid path given
 });
 
-app.use('/post', postRoutes);
+app.use('/api/post', postRoutes);
 
 // Set Port
 const port = process.env.PORT || '3000';

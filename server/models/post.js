@@ -6,10 +6,6 @@ var postSchema = new Schema({
     type: Date,
     required: true
   },
-  username: {
-    type: String,
-    required: true // Maybe have a validator for the username and the user_id
-  },
   replies: {
     type: Array
   },
