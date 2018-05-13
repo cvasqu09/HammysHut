@@ -5,6 +5,7 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const http = require('http');
 const app = express();
+require('dotenv').config();
 
 const postRoutes = require('./server/routes/post');
 
@@ -12,8 +13,7 @@ const postRoutes = require('./server/routes/post');
 app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
 const mongoose = require('mongoose');
-
-const connectionString = `mongodb://cvasqu09:bg2WxrkNk2KEwkql@cluster0-shard-00-00-ruic7.mongodb.net:27017,cluster0-shard-00-01-ruic7.mongodb.net:27017,cluster0-shard-00-02-ruic7.mongodb.net:27017/TheHut?replicaSet=Cluster0-shard-0&ssl=true&authSource=admin`;
+const connectionString = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@${process.env.MONGO_CONNECTION}`;
 mongoose.connect(connectionString);
 // API file for interacting with MongoDB
 
