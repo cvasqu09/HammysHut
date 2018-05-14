@@ -7,7 +7,8 @@ var userSchema = new Schema({
     type: String
   },
   posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
-  yearsOfService: Number
+  yearsOfService: Number,
+  _id: { type: String, required: true }
 }, { versionKey: false });
 
 module.exports = mongoose.model('User', userSchema);

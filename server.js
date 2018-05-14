@@ -8,6 +8,7 @@ const app = express();
 require('dotenv').config();
 
 const postRoutes = require('./server/routes/post');
+const userRoutes = require('./server/routes/users');
 
 // Ave atque vale
 app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
@@ -37,6 +38,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/api/post', postRoutes);
+app.use('/api/users', userRoutes);
 
 // API locations
 app.all('*', function (req, res) {

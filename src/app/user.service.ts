@@ -8,8 +8,8 @@ export class UserService {
 
   constructor(private http: Http) { }
 
-  public getUsers(): Observable<any> {
-    return this.http.get('http://localhost:3000/post/')
+  public getUser(userId: string): Observable<any> {
+    return this.http.get('http://localhost:3000/api/users/' + userId)
       .map((response: Response) => {
         return response;
       })

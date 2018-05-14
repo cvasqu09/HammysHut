@@ -14,9 +14,11 @@ export class LoginComponent implements OnInit {
 
   public ngOnInit() {
     this.authService.handleAuthentication();
-    // this.userService.getUsers().subscribe((user) => {
-    //   const currentUser = localStorage.getItem('user_id');
-    // });
+
+    const currentUser = localStorage.getItem('user_id');
+    this.userService.getUser(currentUser).subscribe((response: Response) => {
+      console.log(response.status);
+    });
   }
 
 }
