@@ -14,7 +14,7 @@ const userRoutes = require('./server/routes/users');
 app.use(favicon(path.join(__dirname, 'dist/favicon.ico')));
 
 const mongoose = require('mongoose');
-const connectionString = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@${process.env.MONGO_CONNECTION}`;
+const connectionString = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_CONNECTION}`;
 mongoose.connect(connectionString);
 // API file for interacting with MongoDB
 

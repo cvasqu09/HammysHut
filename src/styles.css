@@ -22,3 +22,11 @@
 .cyan-btn:hover {
 	background-color: #89FFF1;
 }
+
+.pink-btn {
+  background-color: #FDBDF8;
+}
+
+.pink-btn:hover {
+  background-color: #fdcef9;
+}

@@ -16,7 +16,8 @@ router.get('/:id', function(req, res, next) {
     if(user == null) {
       return res.status(404).json({
         title: '404 Not Found',
-        message: 'User not found'
+        message: 'User not found',
+        code: 404
       })
     }
     return res.status(200).json(user);

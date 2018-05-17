@@ -1,5 +1,6 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" [hidden]=true>
+<button type="button" class="btn btn-primary" (click)="onClick()">Press me</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" [hidden]=true #modalButton>
 </button>
 
 <!-- Modal -->
@@ -7,17 +8,28 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Create User</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form [formGroup]="newUserForm">
+          <div class="formGroup">
+            <label for="username">Username</label>
+            <input type="text" id="username" formControlName="username" class="form-control">
+            <small *ngIf="username.invalid && username.touched">Please enter a username with a minimum of 5 alphanumeric characters</small>
+          </div>
+          <div class="formGroup">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" formControlName="fullName" class="form-control">
+            <small *ngIf="fullName.invalid && fullName.touched">Please enter a minimum of 10 alphanumeric characters</small>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn pink-btn" [disabled]="username.invalid || fullName.invalid">Save changes</button>
       </div>
     </div>
   </div>

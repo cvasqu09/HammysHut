@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PostsModule } from './posts/posts.module';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { UserService } from './user.service';
     PostsModule,
     appRoutes,
     HttpModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService, UserService],
   bootstrap: [AppComponent],

@@ -1,0 +1,25 @@
+.modal-content {
+  background-color: #383A3F;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.modal-header {
+  border-bottom: 1px solid #242529;
+}
+
+.modal-footer {
+  border-top: 1px solid #242529;
+}
+
+.ng-touched.ng-invalid:not(form) {
+  border: 1px solid #ff5c33;
+}
+
+small {
+  color: #ff5c33;
+}
+
+
